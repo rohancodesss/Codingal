@@ -1,0 +1,117 @@
+<!--
+1) Start the HTML document.
+a) Use `<!DOCTYPE html>` to define the page as an HTML5 document.
+b) Open the `<html>` tag and set the language as English.
+2) Create the head section.
+a) Add character encoding using `<meta charset="UTF-8">`.
+b) Set the page title as "My Phone Contact".
+c) Link Bootstrap 5 CSS using the CDN link.
+d) Add internal CSS using the `<style>` tag.
+3) Style the webpage.
+a) Set a light grey background for the page.
+b) Style the main heading with orange colour.
+c) Style small labels using `.card-label`.
+d) Style the code display area using `pre`.
+4) Create the main content container.
+a) Use Bootstrap `container` to keep content centred.
+b) Add the page heading and lesson subtitle.
+5) Create the contact card.
+a) Use a Bootstrap card to display contact details.
+b) Add list items for name, phone, school, and city.
+c) Give each value an ID so JavaScript can update it.
+d) Use placeholder dashes before the values are added.
+6) Create the code display card.
+a) Add another Bootstrap card below the contact card.
+b) Add a `<pre>` element with the ID `codeDisplay`.
+c) Use it to show the JavaScript object as code.
+7) Create the JavaScript object.
+a) Create an object named `myContact`.
+b) Store name, phone, school, and city as object properties.
+8) Use dot notation.
+a) Select the name and phone elements using `getElementById()`.
+b) Use `myContact.name` to display the name.
+c) Use `myContact.phone` to display the phone number.
+9) Use bracket notation.
+a) Select the school and city elements.
+b) Use `myContact["school"]` to display the school.
+c) Use `myContact["city"]` to display the city.
+10) Show the object in the code box.
+a) Select the `codeDisplay` element.
+b) Build the object text using property values.
+c) Use `textContent` to display the formatted code.
+11) Close the `<script>`, `<body>`, and `<html>` tags to complete the webpage.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>myphonecontact</title>
+<style>
+    body {
+        background-color:aquamarine
+
+    }
+     h1 {
+        color: orange;
+    }
+    .card-label {
+        color:black;
+        text-transform:uppercase;
+        font-size: 11px;
+    }
+        .pre {
+            color:black;
+            font-size: 13px;
+
+        }
+        
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+
+    
+    <h1>My Phone Contacts</h1>
+    <p class="text-muted">Introduction to objects in JavaScript</p> 
+    
+    <div class="card" style="width: 18rem; <div class=card-body>">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span class="card-label">Name:</span> <span id="name">---</span></li>
+            <li class="list-group-item"><span class="card-label">Phone:</span> <span id="phone">---</span></li>
+            <li class="list-group-item"><span class="card-label">School:</span> <span id="school">---</span></li>
+            <li class="list-group-item"><span class="card-label">City:</span> <span id="city">---</span></li>
+        </ul>
+    </div>
+    <div class="card" style="width: 18rem; <div class=card-body>">
+        <div class="card-body">
+            <h5 class="card-title">javaobject used
+            </h5>
+                <pre id="codeDisplay"></pre>
+    </div>
+
+    <script>
+        
+    
+        var Mycontact = 
+            {
+                name: "ayush singh",
+                phone: "123-456-7890",
+                school: "Sunshine Schools",
+                city: "Delhi"
+            }
+        var ei = document.getElementById("name");
+        var phone = document.getElementById("phone");
+        var school = document.getElementById("school");
+        var city = document.getElementById("city");
+        ei.textContent = Mycontact.name;
+        phone.textContent = Mycontact.phone;
+        school.textContent = Mycontact["school"];
+        city.textContent = Mycontact["city"];
+var codebox = document.getElementById ("codeDisplay");
+codebox.textContent = "var Mycontact = {\n" + "    name: '" + Mycontact.name + "',\n" + "    phone: '" + Mycontact.phone + "',\n" + "    school: '" + Mycontact.school + "',\n" + "    city: '" + Mycontact.city + "'\n}";                              
+
+    </script>
